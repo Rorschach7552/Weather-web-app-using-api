@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%-title%></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="stylesheets/advanced_view.css">
+  <script src=<%=script_path%>></script>
+</head>
+
+<body class="dark">
+
+    <%- include("header") %>
+
+    <div class="row mt-5">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="cards-wrapper">
+              <div class="card" style="width: 18rem;">
+                <img src="images/rain.png" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">Today</h5>
+                  <p class="card-text">
+                    <div id="weatherinfo0"></div>
+                  </p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom1" aria-controls="offcanvasBottom">info</button>
+                 
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="images/cloud.png" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title"><%-dayTitles[1]%></h5>
+                  <p class="card-text">
+                    <div id="weatherinfo1"></div>
+                  </p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom2" aria-controls="offcanvasBottom">info</button>
+
+
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="images/cloud.png" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title"><%-dayTitles[2]%></h5>
+                  <p class="card-text">
+                    <div id="weatherinfo2"></div>
+                  </p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom3" aria-controls="offcanvasBottom" >info </button>
+
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="images/cloud.png" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title"><%-dayTitles[3]%></h5>
+                  <p class="card-text">
+                    <div id="weatherinfo3"></div>
+                  </p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom">info</button>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="cards-wrapper">
+              <div class="card" style="width: 18rem;">
+                <img src="images/cloud.png" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title"><%-dayTitles[4]%></h5>
+                  <p class="card-text">
+                    <div id="weatherinfo4"></div>
+                  </p>
+                  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom5" aria-controls="offcanvasBottom">info</button>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="images/cloud.png" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title"><%-dayTitles[5]%></h5>
+                  <p class="card-text">
+                    <div id="weatherinfo5"></div>
+                  </p>
+                  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom6" aria-controls="offcanvasBottom">info</button>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="images/cloud.png" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title"><%-dayTitles[6]%></h5>
+                  <p class="card-text">
+                    <div id="weatherinfo6"></div>
+                  </p>
+                  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom7" aria-controls="offcanvasBottom">info</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+      </div>
+    </div>
+<div class="popupinfo">
+  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom1" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body small">
+      <div id="weatherextended0"></div>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom2" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body small">
+      <div id="weatherextended1"></div>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom3" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body small">
+      <div id="weatherextended2"></div>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom4" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body small">
+      <div id="weatherextended3"></div>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom5" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body small">
+      <div id="weatherextended4"></div>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom6" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body small">
+      <div id="weatherextended5"></div>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom7" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body small">
+      <div id="weatherextended6"></div>
+    </div>
+  </div>
+</div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"></script>
+</body>
+<script>setWeatherData(<%=lat%>, <%=long%>)</script>
+</html>

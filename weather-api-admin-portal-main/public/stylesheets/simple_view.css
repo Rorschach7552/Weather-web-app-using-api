@@ -1,0 +1,71 @@
+.header {
+    background-color: #7a7a7ac2;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.logo {
+    width: 60px;
+    padding-bottom: 10px;
+    margin-top: -5px;
+}
+
+.navbar {
+    background-color: #000000a9;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+body.dark {
+    background-image: url('https://source.unsplash.com/1600x900/?landscape');
+    color:rgb(40, 42, 41);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.card {
+    background-color: black;
+    font-family: 'Open Sans', sans-serif;
+    background: #000000d0;
+    color: white;
+    padding: 2em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button {
+    margin: 0.5em;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background: #7c7c7c2b;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+
+  input.search-bar {
+    border: none;
+    outline: none;
+    padding: 0.4em 1em;
+    border-radius: 24px;
+    background: #7c7c7c2b;
+    color: white;
+    font-family: inherit;
+    font-size: 105%;
+    width: calc(100% - 100px);
+  }
+
+  button:hover {
+    background: #7c7c7c6b;
+  }
